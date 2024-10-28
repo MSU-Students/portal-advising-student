@@ -37,7 +37,7 @@ import { MenuOptionItem } from './types';
 const route = useRoute();
 const activeOption = ref('');
 
-defineProps<{ menuOptions: MenuOptionItem[] }>();
+const prop = defineProps<{ menuOptions: MenuOptionItem[] }>();
 
 const setActiveOption = (optionName: string) => {
   activeOption.value = optionName;
@@ -46,14 +46,8 @@ const setActiveOption = (optionName: string) => {
 onMounted(() => {
   const currentPath = route.path;
 
-  if (currentPath.includes('notification')) {
-    activeOption.value = 'notification';
-  } else if (currentPath.includes('history')) {
-    activeOption.value = 'history';
-  } else if (currentPath.includes('profile')) {
-    activeOption.value = 'profile';
-  } else {
-    activeOption.value = 'appointment'; // Default to appointment
-  }
+  activeOption.value =
+    prop.menuOptions.find((path) => currentPath.includes(path.name))?.name ||
+    'appointment';
 });
 </script>
