@@ -93,7 +93,7 @@
 import { ref } from 'vue';
 import MenuOptions from 'src/components/side-menu/MenuOptions.vue';
 import UserProfileCard from 'src/components/side-menu/UserProfileCard.vue';
-import { MenuOptionItem } from 'src/components/side-menu/types';
+import { MenuOptionItem } from 'src/components/types';
 
 const leftDrawerOpen = ref(true);
 const logoutBtnClicked = ref(false);
