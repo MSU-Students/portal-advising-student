@@ -286,13 +286,17 @@ function handleReject() {
 
 <style lang="sass">
 .my-sticky-header-table
-  /* height or max-height is important */
   height: 310px
+
+  thead th // table column such as the date, time, student name, and etc.
+    font-size: 18px
 
   .q-table__top,
   thead
-    /* bg color is important for th; just specify one */
     background-color: #ededed
+
+  tbody tr td // table rows (or the datas)
+    font-size: 18px
 
   thead tr th
     position: sticky
