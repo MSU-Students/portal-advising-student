@@ -291,6 +291,9 @@ function handleReject() {
   thead th // table column such as the date, time, student name, and etc.
     font-size: 18px
 
+  td, th // grid lines
+    border: 1px solid rgba(0, 0, 0, 0.03)
+
   .q-table__top,
   thead
     background-color: #ededed
