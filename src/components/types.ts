@@ -3,6 +3,7 @@ export enum MeetingStatus {
   REJECTED = 'REJECTED',
   ACCEPTED = 'ACCEPTED',
 }
+
 export interface MeetingDetails {
   id: number;
   name: string;
