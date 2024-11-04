@@ -32,7 +32,7 @@ const routes: RouteRecordRaw[] = [
     path: '/student',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', redirect: '/faculty/appointment' },
+      { path: '', redirect: '/student/courses' },
       {
         path: 'courses',
         component: () => import('pages/student/CoursesPage.vue'),
