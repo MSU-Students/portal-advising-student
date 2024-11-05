@@ -1,5 +1,8 @@
 <template>
-  <q-page class="flex column bg-secondary q-pa-lg" style="height: 100vh">
+  <q-page
+    class="flex column q-pa-lg"
+    style="height: 100vh; background-color: #ededed"
+  >
     <div
       class="col-6 q-pa-md"
       v-for="(title, index) in tableTitles"
@@ -13,7 +16,7 @@
         :columns="tableColumns"
         :title="title"
         title-class="text-primary text-h5"
-        class="full-height rounded-borders my-sticky-header-table my-sticky-header-table"
+        class="full-height rounded-borders my-sticky-header-table"
         @row-click="onRowclick"
         flat
         :virtual-scroll="true"
@@ -283,9 +286,34 @@ function handleReject() {
 
 <style lang="sass">
 .my-sticky-header-table
+  height: 310px
+
+  thead th // table column such as the date, time, student name, and etc.
+    font-size: 18px
+
+  td, th // grid lines
+    border: 1px solid rgba(0, 0, 0, 0.03)
+
+  .q-table__top,
+  thead
+    background-color: #ededed
+
+  tbody tr td // table rows (or the datas)
+    font-size: 18px
+
   thead tr th
     position: sticky
     z-index: 1
-  thead~
+  thead tr:first-child th
     top: 0
+
+  /* this is when the loading indicator appears */
+  &.q-table--loading thead tr:last-child th
+    /* height of all previous header rows */
+    top: 48px
+
+  /* prevent scrolling behind sticky top row on focus */
+  tbody
+    /* height of all previous header rows */
+    scroll-margin-top: 48px
 </style>
